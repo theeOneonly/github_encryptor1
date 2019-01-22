@@ -1,0 +1,91 @@
+#! /usr/bin/python3
+import os, sys
+from os import *
+# Rewrite Path
+
+def path2():
+    user_input1 = input("Path: ")
+    while 1==1:
+        su = user_input1
+        if os.path.exists(user_input1) == True:
+            if (su[-16]) and (su[-11]) and (su[-9]) and (su[-1]) == 'g' or 'h' or 'e' or 'r':	    
+                user_input = input("\033[32m" + user_input1 + "\033[0m # ")
+            if user_input == "-c":
+                os.system("clear")
+            if user_input == "-h":
+                print("\n  Commands\n [-h] help [-c] clear screen [-e] encryptor\n start encrypting...")
+            if user_input == "-e":
+                os.system("python3 encryptor")
+        else:
+            print("dir '" + user_input + "' DIR: not found")
+
+# restart if dir is wrong
+
+# Unknown Path detected
+def path():
+		print("\n status: [Failed]\n\n----------------------------------------\n-Why? Windows is not supported.\n-Or you Have this file in the wrong dir.\n----------------------------------------\n\nEnter File Path")
+		path2()
+# path2() is Path Create
+
+# starter
+def piUser2():
+    while 1==1:
+        user_input = input("\033[32m/home/pi/Desktop/github_encryptor\033[0m # ")
+        if user_input == "-c":
+            os.system("clear")
+        if user_input == "-h":
+            print("\n  Commands\n [-h] help [-c] clear screen [-e] encryptor")
+        if user_input == "-e":
+            os.system("python3 encryptor")
+# starter
+def piUser():
+    user_input = input("\033[32m/home/pi/github_encryptor\033[0m # ")
+    if user_input == "-c":
+        os.system("clear")
+    if user_input == "-h":
+        print("\n  Commands\n [-h] help [-c] clear screen [-e] encryptor")
+    if user_input == "-e":
+        os.system("python3 encryptor")
+# starter
+def debUser():
+    os.system("python3 User/debUser.pyc")
+
+# starter
+def debUser2():
+    os.system("python3 User/debUser2.pyc")
+# Breakers
+# Start dir Scripts
+def piUser2_1():
+    piUser2()
+def piUser2_2():
+	piUser()
+def debUser2_1():
+	debUser()
+def debUser2_2():
+	debUser2()
+
+# Detecting DIRs
+def debStart():
+	if os.path.exists('/root/Desktop/github_encryptor') == True:
+		debUser2_1()
+	if os.path.exists('/root/github_encryptor') == True:
+		debUser2_2()
+	else:
+		path()
+# path() is When dir is unknown
+
+# Start Text
+print("'root'or'pi'or'Desktop' install recommended\n ------\n|  ---  |-------------\n| |   |_|\033[32mWelcome to\033[0m\n|_|_____ gh_encryptor\n|       |encrypt data!\n| LOCK  |-------------\n|_______|")
+print("\n\n\n\n\n Commands\n\n [-h] help [-c] clear screen [-e] encrypt data")
+
+# Start
+def start():
+	if os.path.exists('/home/pi/github_encryptor') == True:
+		piUser2_2()
+	if os.path.exists('/home/pi/Desktop/github_encryptor') == True:
+		piUser2_1()
+	else:
+		debStart()
+# Detecting DIRs
+
+start()
