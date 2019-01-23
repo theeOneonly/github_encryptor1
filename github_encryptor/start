@@ -6,10 +6,16 @@ from os import *
 def path2():
     user_input1 = input("Path: ")
     while 1==1:
-        su = user_input1
         if os.path.exists(user_input1) == True:
-            if (su[-16]) and (su[-11]) and (su[-9]) and (su[-1]) == 'g' or 'h' or 'e' or 'r':	    
-                user_input = input("\033[32m" + user_input1 + "\033[0m # ")
+            su = user_input1
+            print((su[-16]))
+            if (su[-16]) == 'g':
+                if (su[-1]) == 'r':
+                    user_input = input("\033[32m" + user_input1 + "\033[0m # ")
+                else:
+                    print("dir'" + user_input1 + "' DIR: not found")
+            else:
+                print("dir'" + user_input1 + "' DIR: not found")
             if user_input == "-c":
                 os.system("clear")
             if user_input == "-h":
